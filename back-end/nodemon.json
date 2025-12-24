@@ -1,0 +1,7 @@
+{
+    "watch": ["app"],
+    "ext": ".ts,.js",
+    "ignore": [],
+    "exec": "npx ts-node -r tsconfig-paths/register ./app/index.ts"
+  }
+  

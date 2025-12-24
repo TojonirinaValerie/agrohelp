@@ -1,0 +1,44 @@
+{
+  "types": [
+    {
+      "name": "B-NIMO",
+      "productTypes": [
+        {
+          "name": "Engrais",
+          "nameEn": "Fertilizers",
+          "description": "Engrais bio-chimiques",
+          "descriptionEn": "Biochemical fertilizers"
+        },
+        {
+          "name": "Pesticides",
+          "nameEn": "Pesticides",
+          "description": "Produits bio-chimiques",
+          "descriptionEn": "Biochemical products"
+        }
+      ]
+    },
+    {
+      "name": "MALAO",
+      "productTypes": [
+        {
+          "name": "Miels",
+          "nameEn": "Honey",
+          "description": "Ensemble des miels bio",
+          "descriptionEn": "A variety of organic honey"
+        },
+        {
+          "name": "Epices",
+          "nameEn": "Spices",
+          "description": "Tous les épices",
+          "descriptionEn": "All kinds of spices"
+        },
+        {
+          "name": "Brèdes",
+          "nameEn": "Vegetables",
+          "description": "Ensemble des légumes",
+          "descriptionEn": "All types of vegetables"
+        }
+      ]
+    }
+  ]
+}

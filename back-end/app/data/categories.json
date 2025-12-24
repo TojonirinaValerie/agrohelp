@@ -1,0 +1,24 @@
+{
+    "categories": 
+    [
+        {
+            "name": "B-NIMO",
+            "nameEn": "B-NIMO",
+            "description": "Produits pour les produits agricoles comme les pésticides ou les engrais et d'autres produits",
+            "descriptionEn": "Products for agricultural use such as pesticides, fertilizers, and other inputs"
+        },
+        {
+            "name": "MALAO",
+            "nameEn": "MALAO",
+            "description": "Produits incluant les matières prémières",
+            "descriptionEn": "Products including raw materials"
+        },
+        {
+            "name": "AUTRES",
+            "nameEn": "OTHER",
+            "description": "Autres produits qu'Agrohelp mettent en vente",
+            "descriptionEn": "Other products offered for sale by Agrohelp"
+        }
+
+    ]
+}

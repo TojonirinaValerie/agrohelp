@@ -1,0 +1,149 @@
+<div class="form-container">
+    <mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ isEditMode ? 'Edit Product' : 'Add New Product' }}</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <div class="form-row">
+            <mat-form-field class="form-field">
+            <mat-label>Product Name</mat-label>
+            <input matInput formControlName="name" placeholder="Enter product name">
+            <mat-error *ngIf="productForm.get('name')?.hasError('required')">
+                Product name is required
+            </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-field">
+            <mat-label>Product Name English</mat-label>
+            <input matInput formControlName="nameEn" placeholder="Enter product name english">
+            </mat-form-field>
+        </div>
+
+        <div class="form-row">
+            <mat-form-field class="form-field">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" rows="3" 
+                    placeholder="Enter product description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="form-field">
+            <mat-label>Description English</mat-label>
+            <textarea matInput formControlName="descriptionEn" rows="3" 
+                    placeholder="Enter product description english"></textarea>
+            </mat-form-field>
+        </div>
+
+        <mat-form-field class="form-field">
+            <mat-label>Barcode</mat-label>
+            <input matInput formControlName="barcode" placeholder="Enter Barcode">
+            <mat-error *ngIf="productForm.get('barcode')?.hasError('required')">
+                Barcode is required
+            </mat-error>
+        </mat-form-field>
+
+        <div class="form-row">
+            <mat-form-field class="form-field">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+                <mat-option *ngFor="let productCategory of productCategories" value="{{ productCategory.id }}" (click)="getProductTypeBycategory(productCategory.id)">{{ productCategory.name }} </mat-option>
+            </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="form-field">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="typeId">
+                <mat-option *ngFor="let productType of productTypeByCategories" value="{{ productType.id }}">{{ productType.name }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="productForm.get('typeId')?.hasError('required')">
+                Type is required
+            </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-row">            
+            <mat-form-field class="form-field">
+                <mat-label>Retailer Price</mat-label>
+                <input matInput type="number" formControlName="retailer_price" placeholder="0.00" step="0.01">
+                <span matTextPrefix>Ar</span>
+                <mat-error *ngIf="productForm.get('retailer_price')?.hasError('required')">
+                    Retailer Price is required
+                </mat-error>
+                <mat-error *ngIf="productForm.get('retailer_price')?.hasError('min')">
+                    Retailer Price must be greater than 0
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-field">
+                <mat-label>Consumer Price</mat-label>
+                <input matInput type="number" formControlName="consumer_price" placeholder="0.00" step="0.01">
+                <span matTextPrefix>Ar</span>
+                <mat-error *ngIf="productForm.get('consumer_price')?.hasError('required')">
+                    Consumer Price is required
+                </mat-error>
+                <mat-error *ngIf="productForm.get('consumer_price')?.hasError('min')">
+                    Consumer Price must be greater than 0
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-row">
+            <mat-form-field class="form-field">
+            <mat-label>Stock Quantity</mat-label>
+            <input matInput type="number" formControlName="quantity" placeholder="0">
+            <mat-error *ngIf="productForm.get('quantity')?.hasError('required')">
+                Stock quantity is required
+            </mat-error>
+            <mat-error *ngIf="productForm.get('quantity')?.hasError('min')">
+                Stock must be 0 or greater
+            </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-field">
+            <mat-label>Featured</mat-label>
+            <mat-select formControlName="featured">
+                <mat-option value="true">Yes</mat-option>
+                <mat-option value="false">No</mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+            <div class="image-upload-container">
+                <label class="form-label">Product Image</label>
+                <div class="image-preview-container mb-3">
+                    <div class="image-preview" [ngClass]="{'has-image': imagePreview}">
+                    <img *ngIf="imagePreview" [src]="imagePreview" alt="preview">
+                    <div *ngIf="!imagePreview" class="no-image">
+                        <i class="bi bi-image"></i>
+                        <p>No image</p>
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <input 
+                    type="file" 
+                    class="form-control" 
+                    id="imageUpload" 
+                    formControlName="image"
+                    accept="image/*"
+                    (change)="uploadFile($event)"
+                    >
+                    <div class="form-text">Accepted format : JPG, PNG. Max size : 5MB</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-actions">
+            <button mat-button type="button" (click)="goBack()">Cancel</button>
+            <button mat-raised-button color="primary" type="submit" 
+                    [disabled]="productForm.invalid || isLoading">
+            {{ isLoading ? 'Saving...' : (isEditMode ? 'Update Product' : 'Add Product') }}
+            </button>
+        </div>
+        </form>
+    </mat-card-content>
+    </mat-card>
+</div>

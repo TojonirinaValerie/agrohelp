@@ -1,0 +1,126 @@
+<div [class.blur]="loading" class="orders-container">
+    <div class="page-header">
+    <h1 class="page-title">Orders</h1>
+    </div>
+
+    <mat-card>
+    <mat-card-content>
+        <table mat-table [dataSource]="orders.reverse()" class="data-table">
+        <ng-container matColumnDef="customer">
+            <th mat-header-cell *matHeaderCellDef>Customer</th>
+            <td mat-cell *matCellDef="let order">
+            <div class="customer-info">
+                <div class="customer-name">{{ order.address.fullName }}</div>
+                <div class="customer-email">{{ order.address.email }}</div>
+                <div class="customer-email">{{ order.address.phone_number }}</div>
+            </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef>Address</th>
+            <td mat-cell *matCellDef="let order">
+            <div class="customer-info">
+                <div class="customer-name">{{ order.address.house_address }}</div>
+                <div class="customer-email">{{ order.address.postal_code }}</div>
+                <div class="customer-city">{{ getCity(order.address.city) }}</div>
+            </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Order Date</th>
+            <td mat-cell *matCellDef="let order">{{ order.createdAt | date:'short' }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef>Total</th>
+            <td mat-cell *matCellDef="let order">
+            <div class="order-total">
+                Ar {{ getItems(order.id).total | number:'1.2-2' }}
+            </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let order">
+            <span class="status-badge status-{{ order.status }}">{{ order.status }}</span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="payment-status">
+            <th mat-header-cell *matHeaderCellDef>Payment</th>
+            <td mat-cell *matCellDef="let order">
+            <span class="status-badge status-{{ order.paymentStatus }}">{{ order.paymentStatus }}</span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let order">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="updateOrderStatus(order.id, 'processing')"
+                        [disabled]="order.status === 'processing' || order.status === 'shipped' || order.status === 'delivered' || order.status === 'cancelled'">
+                <mat-icon>play_circle</mat-icon>
+                <span>Mark as Processing</span>
+                </button>
+                <button mat-menu-item (click)="updateOrderStatus(order.id, 'shipped')"
+                        [disabled]="order.status === 'shipped' || order.status === 'delivered' || order.status === 'cancelled'">
+                <mat-icon>local_shipping</mat-icon>
+                <span>Mark as Shipped</span>
+                </button>
+                <button mat-menu-item (click)="updateOrderStatus(order.id, 'delivered')"
+                        [disabled]="order.status === 'delivered' || order.status === 'cancelled'">
+                <mat-icon>check_circle</mat-icon>
+                <span>Mark as Delivered</span>
+                </button>
+                <button mat-menu-item (click)="updateOrderStatus(order.id, 'cancelled')"
+                        [disabled]="order.status === 'cancelled' || order.status === 'delivered'">
+                <mat-icon>cancel</mat-icon>
+                <span>Cancel Order</span>
+                </button>
+            </mat-menu>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="pdf">
+            <th mat-header-cell *matHeaderCellDef>Invoice</th>
+            <td mat-cell *matCellDef="let order">
+            <button mat-icon-button (click)="generateInvoice(order.id)" [disabled]="loading">
+                <mat-icon>picture_as_pdf</mat-icon>
+            </button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>
+                Email
+            </th>
+            <td mat-cell *matCellDef="let order">
+                <button mat-icon-button (click)="sendInvoice(order)">
+                    <mat-icon>email</mat-icon>
+                </button>
+                <a [href]="mailToUri" hidden target="_blank">Send Prefilled Email</a>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="details">
+            <th mat-header-cell *matHeaderCellDef>Details</th>
+            <td mat-cell *matCellDef="let order">
+            <button mat-icon-button (click)="openOrderDetailsDialog(order.id)">
+                <mat-icon>visibility</mat-icon>
+            </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card-content>
+    </mat-card>
+</div>
+<div class="loading-overlay" *ngIf="loading">
+  <div class="spinner"></div>
+  <p>Generating PDF... Please wait</p>
+</div>

@@ -1,0 +1,126 @@
+{
+  "site": {
+    "name": "AgroHelp Consulting",
+    "tagline": "Serving the rural world"
+  },
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "cart": "Cart",
+    "account": "My Account",
+    "language": "Language",
+    "search": "Search",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode"
+  },
+  "home": {
+    "heroTitle": "AgroHelp Consulting",
+    "heroSubtitle": "Serving the rural world",
+    "heroText0": "Enable sustainable socio-economic development to break free from poverty and long-term dependency.",
+    "heroText1": "Agricultural service provider and qualified rural entrepreneurship support for organizations, farmer associations (OPA), and project initiators.",
+    "heroText2": "Our goal: Enable sustainable socio-economic development to break free from poverty and long-term dependency.",
+    "shopNow": "Shop Now",
+    "learnMore": "Learn More",
+    "featuredProducts": "Featured Products",
+    "viewAll": "View All"
+  },
+  "products": {
+    "title": "Our Products",
+    "filter": "Filter by",
+    "sort": "Sort by",
+    "price": "Price",
+    "availability": "Availability",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "addToCart": "Add to Cart",
+    "viewDetails": "View Details",
+    "reviews": "reviews",
+    "searchPlaceholder": "Search for a product...",
+    "featured": "featured"
+  },
+  "productDetails": {
+    "addToCart": "Add to Cart",
+    "quantity": "Quantity",
+    "inStock": "In Stock",
+    "lowStock": "Low Stock",
+    "outOfStock": "Out of Stock",
+    "description": "Description",
+    "reviews": "Reviews",
+    "relatedProducts": "Related Products",
+    "notFound": "Product not found",
+    "loadError": "Error while loading product",
+    "back": "Return to products list"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "checkout": "Checkout",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tax": "VAT",
+    "remove": "Remove",
+    "updateQuantity": "Update",
+    "orderSummary": "Order Summary"
+  },
+  "checkout": {
+    "title": "Complete Your Order",
+    "shippingInfo": "Shipping Information",
+    "paymentInfo": "Payment Information",
+    "orderSummary": "Order Summary",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "address": "Address",
+    "city": "City",
+    "region": "Region",
+    "notes": "Special Notes (optional)",
+    "placeOrder": "Place Order",
+    "backToCart": "Back to Cart",
+    "paymentMethod": "Payment Method",
+    "cardDetails": "Card Details",
+    "cardNumber": "Card Number",
+    "expiryDate": "Expiry Date",
+    "cvv": "CVV",
+    "nameOnCard": "Name on Card",
+    "confirmation": "Confirmation"
+  },
+  "order": {
+    "title": "Invoice",
+    "getOrderInfo": "Get Order Information",
+    "orderInfo": "Invoice Is Ready"
+  },
+  "account": {
+    "title": "My Account",
+    "orders": "My Orders",
+    "settings": "Settings",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "orderHistory": "Order History",
+    "noOrders": "You don't have any orders yet",
+    "personalInfo": "Personal Information"
+  },
+  "footer": {
+    "about": "About AgroHelp",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "contact": "Contact",
+    "newsletter": "Subscribe to our newsletter",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "Your email",
+    "copyright": "© 2025 AgroHelp Consulting. All rights reserved."
+  },
+  "errors": {
+    "required": "This field is required",
+    "invalidEmail": "Invalid email",
+    "minLength": "Must contain at least {{count}} characters",
+    "maxLength": "Must not exceed {{count}} characters",
+    "serverError": "An error occurred, please try again"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "productTypes": [
+    {
+      "name": "Pesticides",
+      "products": [
+        {
+          "name": "Pesticide",
+          "nameEn": "Pesticide",
+          "description": "Produit bio-chimique",
+          "descriptionEn": "Biochemical product",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "12345678",
+          "in_stock": true,
+          "quantity": 10,
+          "retailer_price": 1500,
+          "consumer_price": 2000,
+          "featured": true
+        },
+        {
+          "name": "Insecticide",
+          "nameEn": "Insecticide",
+          "description": "Produit contre les insectes nuisibles",
+          "descriptionEn": "Product against harmful insects",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "23456789",
+          "in_stock": true,
+          "quantity": 25,
+          "retailer_price": 1800,
+          "consumer_price": 2200,
+          "featured": false
+        },
+        {
+          "name": "Fungicide",
+          "nameEn": "Fungicide",
+          "description": "Produit contre les champignons nuisibles",
+          "descriptionEn": "Product against harmful fungi",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "34567890",
+          "in_stock": true,
+          "quantity": 15,
+          "retailer_price": 2000,
+          "consumer_price": 2500,
+          "featured": true
+        }
+      ]
+    },
+    {
+      "name": "Miels",
+      "products": [
+        {
+          "name": "Organic Honey",
+          "nameEn": "Organic Honey",
+          "description": "Miel biologique pur",
+          "descriptionEn": "Pure organic honey",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "1234567890123",
+          "in_stock": true,
+          "quantity": 50,
+          "retailer_price": 1600,
+          "consumer_price": 2000,
+          "featured": true
+        },
+        {
+          "name": "Honey Blend",
+          "nameEn": "Honey Blend",
+          "description": "Ensemble des miels bio",
+          "descriptionEn": "All bio honey blend",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "12345679",
+          "in_stock": true,
+          "quantity": 100,
+          "retailer_price": 1200,
+          "consumer_price": 1500,
+          "featured": false
+        },
+        {
+          "name": "Baobab Honey",
+          "nameEn": "Baobab Honey",
+          "description": "Miel bio de baobab",
+          "descriptionEn": "Organic baobab honey",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "12345668",
+          "in_stock": true,
+          "quantity": 50,
+          "retailer_price": 1400,
+          "consumer_price": 1700,
+          "featured": true
+        },
+        {
+          "name": "Forest Honey",
+          "nameEn": "Forest Honey",
+          "description": "Miel sauvage de la forêt",
+          "descriptionEn": "Wild forest honey",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "45678901",
+          "in_stock": true,
+          "quantity": 60,
+          "retailer_price": 1900,
+          "consumer_price": 2300,
+          "featured": false
+        }
+      ]
+    },
+    {
+      "name": "Epices",
+      "products": [
+        {
+          "name": "Vanille",
+          "nameEn": "Vanilla",
+          "description": "Vanille en tube",
+          "descriptionEn": "Vanilla in tube",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "12345678",
+          "in_stock": true,
+          "quantity": 200,
+          "retailer_price": 2500,
+          "consumer_price": 3000,
+          "featured": false
+        },
+        {
+          "name": "Chocolat Noir",
+          "nameEn": "Dark Chocolate",
+          "description": "Chocolat noir 70%",
+          "descriptionEn": "70% dark chocolate",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "9876543210987",
+          "in_stock": true,
+          "quantity": 120,
+          "retailer_price": 3500,
+          "consumer_price": 4000,
+          "featured": false
+        },
+        {
+          "name": "Cinnamon",
+          "nameEn": "Cinnamon",
+          "description": "Bâtons de cannelle bio",
+          "descriptionEn": "Organic cinnamon sticks",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "23456781",
+          "in_stock": true,
+          "quantity": 150,
+          "retailer_price": 2200,
+          "consumer_price": 2700,
+          "featured": true
+        },
+        {
+          "name": "Ginger",
+          "nameEn": "Ginger",
+          "description": "Gingembre frais biologique",
+          "descriptionEn": "Fresh organic ginger",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "34567891",
+          "in_stock": true,
+          "quantity": 130,
+          "retailer_price": 1800,
+          "consumer_price": 2100,
+          "featured": false
+        }
+      ]
+    },
+    {
+      "name": "Brèdes",
+      "products": [
+        {
+          "name": "Ravitoto",
+          "nameEn": "Ravitoto",
+          "description": "Ravitoto 100% pure",
+          "descriptionEn": "100% pure Ravitoto",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "12345678",
+          "in_stock": true,
+          "quantity": 500,
+          "retailer_price": 1800,
+          "consumer_price": 2200,
+          "featured": false
+        },
+        {
+          "name": "Thé Vert",
+          "nameEn": "Green Tea",
+          "description": "Thé vert premium",
+          "descriptionEn": "Premium green tea",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "5678901234567",
+          "in_stock": false,
+          "quantity": 0,
+          "retailer_price": 3000,
+          "consumer_price": 3500,
+          "featured": false
+        },
+        {
+          "name": "Spinach",
+          "nameEn": "Spinach",
+          "description": "Feuilles d'épinard fraîches",
+          "descriptionEn": "Fresh spinach leaves",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "34567890",
+          "in_stock": true,
+          "quantity": 200,
+          "retailer_price": 1700,
+          "consumer_price": 2100,
+          "featured": true
+        },
+        {
+          "name": "Kale",
+          "nameEn": "Kale",
+          "description": "Feuilles de chou kale bio",
+          "descriptionEn": "Organic kale leaves",
+          "image": "https://agrohelp-back.onrender.com/uploads/image-1752119807031-320472758.png",
+          "barcode": "45678912",
+          "in_stock": true,
+          "quantity": 180,
+          "retailer_price": 2000,
+          "consumer_price": 2400,
+          "featured": false
+        }
+      ]
+    }
+  ]
+}

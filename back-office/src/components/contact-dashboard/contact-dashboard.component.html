@@ -1,0 +1,64 @@
+<div class="contacts-container">
+  <div class="page-header">
+    <h1 class="page-title">Contacts</h1>
+  </div>
+
+  <mat-card>
+    <mat-card-content>
+      <table mat-table [dataSource]="contacts" class="data-table">
+
+        <!-- Name -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let contact">{{ contact.name }}</td>
+        </ng-container>
+
+        <!-- Email -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let contact">{{ contact.email }}</td>
+        </ng-container>
+
+        <!-- Phone -->
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef>Phone</th>
+          <td mat-cell *matCellDef="let contact">{{ contact.phone }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="subject">
+          <th mat-header-cell *matHeaderCellDef>Subject</th>
+          <td mat-cell *matCellDef="let contact">{{ contact.subject }}</td>
+        </ng-container>
+        <!-- Message -->
+        <ng-container matColumnDef="message">
+          <th mat-header-cell *matHeaderCellDef>Message</th>
+          <td mat-cell *matCellDef="let contact">{{ contact.message | slice:0:40 }}...</td>
+        </ng-container>
+
+        <!-- Actions -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let contact">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item [routerLink]="['/contacts/view', contact.id]">
+                <mat-icon>visibility</mat-icon>
+                <span>View</span>
+              </button>
+              <button mat-menu-item (click)="deleteContact(contact.id)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

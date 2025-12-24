@@ -1,0 +1,130 @@
+{
+  "site": {
+    "name": "AgroHelp Consulting",
+    "tagline": "Soutenir le développement du monde rural"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "products": "Produits",
+    "about": "À propos",
+    "contact": "Contact",
+    "cart": "Panier",
+    "account": "Mon compte",
+    "language": "Langue",
+    "search": "Rechercher",
+    "darkMode": "Mode sombre",
+    "lightMode": "Mode clair"
+  },
+  "home": {
+    "heroTitle": "AgroHelp Consulting",
+    "heroSubtitle": "Soutenir le développement du monde rural",
+    "heroText0":"Permettre un développement socio-économique durable pour sortir de la pauvreté et de l’assistanat perpétuel.",
+    "heroText1": "Prestataire de service agricole et de l’entrepreneuriat rurale qualifié pour les structures, OPA, et des porteurs de projets.",
+    "heroText2":"Notre objectif: Permettre un développement socio-économique durable pour sortir de la pauvreté et de l’assistanat perpétuel.",
+    "shopNow": "Acheter maintenant",
+    "learnMore": "En savoir plus",
+    "featuredProducts": "Produits vedettes",
+    "viewAll": "Voir tout"
+  },
+  "products": {
+    "title": "Nos produits",
+    "filter": "Filtrer par",
+    "sort": "Trier par",
+    "price": "Prix",
+    "availability": "Disponibilité",
+    "inStock": "En stock",
+    "outOfStock": "Rupture de stock",
+    "addToCart": "Ajouter au panier",
+    "viewDetails": "Voir détails",
+    "reviews": "avis",
+    "searchPlaceholder": "Rechercher un produit...",
+    "backToProducts": "Retour au produit",
+    "featured": "vedettes"
+  },
+  "productDetails": {
+    "addToCart": "Ajouter au panier",
+    "quantity": "Quantité",
+    "inStock": "En stock",
+    "lowStock": "Stock limité",
+    "outOfStock": "Rupture de stock",
+    "description": "Description",
+    "reviews": "Avis",
+    "relatedProducts": "Produits similaires",
+    "notFound": "Produit non trouvé",
+    "loadError": "Erreur lors de chargement du produit",
+    "back": "Retourner à la liste des produits"
+  },
+  "cart": {
+    "title": "Votre panier",
+    "empty": "Votre panier est vide",
+    "continueShopping": "Continuer vos achats",
+    "checkout": "Passer à la caisse",
+    "total": "Total",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "tax": "TVA",
+    "remove": "Supprimer",
+    "updateQuantity": "Mettre à jour",
+    "quantity": "Quantité",
+    "orderSummary": "Récapitulatif de la commande"
+  },
+  "checkout": {
+    "title": "Finaliser votre commande",
+    "shippingInfo": "Informations de livraison",
+    "paymentInfo": "Informations de paiement",
+    "orderSummary": "Résumé de la commande",
+    "fullName": "Nom complet",
+    "email": "Email",
+    "phoneNumber": "Numéro de téléphone",
+    "address": "Adresse",
+    "city": "Ville",
+    "region": "Région",
+    "notes": "Notes spéciales (optionnel)",
+    "placeOrder": "Commander",
+    "backToCart": "Retour au panier",
+    "paymentMethod": "Méthode de paiement",
+    "cardDetails": "Détails de la carte",
+    "cardNumber": "Numéro de carte",
+    "expiryDate": "Date d'expiration",
+    "cvv": "CVV",
+    "nameOnCard": "Nom sur la carte",
+    "postalCode": "Code postal",
+    "mvola": "pour paiement MVola",
+    "confirmation": "Confirmation"
+  },
+  "order": {
+    "title": "Facture",
+    "getOrderInfo": "Obtenir les informations de la commande",
+    "orderInfo": "Votre facture est prête"
+  },
+  "account": {
+    "title": "Mon compte",
+    "orders": "Mes commandes",
+    "settings": "Paramètres",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "orderHistory": "Historique des commandes",
+    "noOrders": "Vous n'avez pas encore de commandes",
+    "personalInfo": "Informations personnelles"
+  },
+  "footer": {
+    "about": "À propos d'AgroHelp",
+    "shipping": "Livraison",
+    "returns": "Retours",
+    "terms": "Conditions",
+    "privacy": "Confidentialité",
+    "contact": "Contact",
+    "newsletter": "Inscrivez-vous à notre newsletter",
+    "subscribe": "S'abonner",
+    "emailPlaceholder": "Votre email",
+    "copyright": "© 2025 AgroHelp. Tous droits réservés."
+  },
+  "errors": {
+    "required": "Ce champ est requis",
+    "invalidEmail": "Email invalide",
+    "minLength": "Doit contenir au moins {{count}} caractères",
+    "maxLength": "Ne doit pas dépasser {{count}} caractères",
+    "serverError": "Une erreur est survenue, veuillez réessayer"
+  }
+}

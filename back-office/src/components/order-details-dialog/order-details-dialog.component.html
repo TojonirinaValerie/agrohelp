@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Order Details</h2>
+<mat-dialog-content>
+  <table mat-table [dataSource]="orderList" class="data-table">
+  <ng-container matColumnDef="items">
+    <th mat-header-cell *matHeaderCellDef>Items</th>
+    <td mat-cell *matCellDef="let item">
+    <div class="order-item">
+        <div class="order-items">
+            {{ item.productName }}
+        </div>
+    </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="quantity">
+    <th mat-header-cell *matHeaderCellDef>Quantity</th>
+    <td mat-cell *matCellDef="let item">
+    <div class="order-item">
+        <div class="order-items">
+            {{ item.quantity }}
+        </div>
+    </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="total">
+    <th mat-header-cell *matHeaderCellDef>Total</th>
+    <td mat-cell *matCellDef="let item">
+    <div class="order-item">
+        <div class="order-items">
+           Ar {{ item.quantity * item.consumerPrice }}
+        </div>
+    </div>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <h3 align="end">Total: Ar {{ total | number:'1.2-2' }}</h3>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Close</button>
+</mat-dialog-actions>

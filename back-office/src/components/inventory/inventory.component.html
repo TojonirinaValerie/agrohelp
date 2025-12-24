@@ -1,0 +1,109 @@
+<div class="inventory-container">
+    <div class="page-header">
+    <h1 class="page-title">Inventory Management</h1>
+    </div>
+
+    <div class="inventory-stats">
+    <mat-card class="stat-card">
+        <mat-icon class="stat-icon">inventory</mat-icon>
+        <div class="stat-content">
+        <div class="stat-value">{{ totalProducts }}</div>
+        <div class="stat-label">Total Products</div>
+        </div>
+    </mat-card>
+
+    <mat-card class="stat-card">
+        <mat-icon class="stat-icon warning">warning</mat-icon>
+        <div class="stat-content">
+        <div class="stat-value">{{ lowStockCount }}</div>
+        <div class="stat-label">Low Stock Alerts</div>
+        </div>
+    </mat-card>
+
+    <mat-card class="stat-card">
+        <mat-icon class="stat-icon success">check_circle</mat-icon>
+        <div class="stat-content">
+        <div class="stat-value">{{ inStockCount }}</div>
+        <div class="stat-label">Well Stocked</div>
+        </div>
+    </mat-card>
+    </div>
+
+    <mat-card>
+    <mat-card-header>
+        <mat-card-title>Inventory Status</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="products.reverse()" class="data-table">
+        <ng-container matColumnDef="product">
+            <th mat-header-cell *matHeaderCellDef>Product</th>
+            <td mat-cell *matCellDef="let product">
+            <div class="product-info">
+                <img [src]="product.image" [alt]="product.name" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">{{ product.name }}</div>
+                    <div class="product-barcode">Barcode: {{ product.barcode }}</div>
+                </div>
+            </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef>Category</th>
+            <td mat-cell *matCellDef="let product">{{ product.type.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef>Current Stock</th>
+            <td mat-cell *matCellDef="let product">
+            <div class="stock-info">
+                <span [class]="getStockClass(product.quantity)">{{ product.quantity }}</span>
+                <mat-progress-bar 
+                [value]="getStockPercentage(product.quantity)"
+                [color]="getProgressColor(product.quantity)"
+                class="stock-progress">
+                </mat-progress-bar>
+            </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let product">
+            <div class="stock-status">
+                <mat-icon [class]="getStatusIconClass(product.quantity)">
+                {{ getStatusIcon(product.quantity) }}
+                </mat-icon>
+                <span>{{ getStockStatus(product.quantity) }}</span>
+            </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef>Inventory Value</th>
+            <td mat-cell *matCellDef="let product">
+            <div class="inventory-value">
+                Ar{{ (product.consumer_price * product.quantity) | number:'1.2-2' }}
+            </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let product">
+            <button mat-icon-button matTooltip="Restock" (click)="openRestockDialog(product.id)">
+                <mat-icon>add_shopping_cart</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Edit" [routerLink]="['/products/edit', product.id]">
+                <mat-icon>edit</mat-icon>
+            </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" 
+            [class.low-stock-row]="row.quantity < 10"></tr>
+        </table>
+    </mat-card-content>
+    </mat-card>
+</div>
