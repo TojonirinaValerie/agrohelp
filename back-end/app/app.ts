@@ -20,6 +20,7 @@ app.use(
       "http://localhost:4200",
       "http://localhost:5173",
       "https://agrohelp-consulting.netlify.app",
+      "https://agrohelp-bo.vercel.app"
     ], // or use '*' for all origins (not recommended in prod)
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     //credentials: true
