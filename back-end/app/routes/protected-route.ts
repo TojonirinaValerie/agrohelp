@@ -431,9 +431,9 @@ router.get(`${apiOrder}/:_id`, getOrder);
 
 /**
  * @swagger
- * /order/{_id}:
+ * /order-total:
  *   get:
- *     summary: Get an order by ID
+ *     summary: Get Total Order
  *     x-author: miandrs
  *     tags:
  *       - Order

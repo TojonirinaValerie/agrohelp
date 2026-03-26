@@ -10,6 +10,7 @@ import PaymentType from "./payment-type";
 import Product from "./product";
 import ProductType from "./product-type";
 import TopSelling from "./top-selling";
+import User from "./user";
 
 export const initForeignKey = () => {
     CustomerHistory.belongsTo(Address, { foreignKey: 'customerId', as: 'customer', });
@@ -27,6 +28,8 @@ export const initForeignKey = () => {
     Product.hasMany(OrderList, { foreignKey: 'productId' });
     Product.hasMany(TopSelling, { foreignKey: 'productId' });
     Product.belongsTo(ProductType, { foreignKey: 'typeId', as: 'type' });
+
+    User.hasMany(Product, { foreignKey: 'userId' });
 
     Order.hasMany(OrderList, { foreignKey: 'orderId' });
     Order.belongsTo(Address, { foreignKey: 'addressId', as: 'address' });

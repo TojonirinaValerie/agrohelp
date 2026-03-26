@@ -1,0 +1,3 @@
+- filtre et pagination
+- rupture de stock
+- langue

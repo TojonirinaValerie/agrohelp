@@ -3,8 +3,12 @@ import Product from "@/models/product";
 import ProductType from "@/models/product-type";
 import User from "@/models/user";
 import { Request, Response, NextFunction, RequestHandler } from "express";
+import { UUIDV4 } from "sequelize";
 
 export const createProduct: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
+    console.log('====================================');
+    console.log("product");
+    console.log('====================================');
     try {
         const {name, nameEn, description, descriptionEn, barcode, featured, quantity, retailer_price, consumer_price, typeId } = JSON.parse(req.body.product);
         const { id } = JSON.parse(req.body.user);
@@ -52,8 +56,9 @@ export const updateProduct: RequestHandler = async (req: Request, res: Response,
     try {
         const {name, nameEn, description, descriptionEn, barcode, featured, quantity, retailer_price, consumer_price, typeId } = JSON.parse(req.body.product);
         const { id } = JSON.parse(req.body.user);
-        console.log(req.body);
+        // console.log(req.body);
         const user_id = id;
+        console.log("user_id=> ", user_id);
         const productId = req.params['_id'];
         const file = req.file;
         let imageUrl;

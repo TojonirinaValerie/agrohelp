@@ -2,7 +2,14 @@ import { RequestHandler, Request, Response, NextFunction } from "express";
 import { AuthResponse, Client, MVOLA_BASE_URL, TransactionDetails, TransactionRequest, TransactionResponse, TransactionService, TransactionStatus } from "../service/mvola/mvola";
 import CallBackTransaction from "@/models/callback-transaction";
 
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
+const MVolaCallbackUrl = process.env.MVOLA_CALLBACK_URL || "https://agrohelp-back.onrender.com/api/callback/transaction";
 export const initiateTransaction: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
+    res.handler.successRequest("MVola Payment initiate with success", {response: {status: "pending"}});
+    
     try {
         const consumerKey = process.env.CONSUMER_KEY;
         const consumerSecret = process.env.CONSUMER_SECRET;
@@ -18,7 +25,7 @@ export const initiateTransaction: RequestHandler = async (req: Request, res: Res
             userLanguage: "FR",
             userAccountIdentifier: "msisdn;"+userAccountIdentifier!,//ex = "msisdn;0343500004"
             partnerName: partnerName,
-            callbackUrl: "https://agrohelp-back.onrender.com/api/callback/transaction"
+            callbackUrl: MVolaCallbackUrl
         });
 
         const transactionRef = correlationId;

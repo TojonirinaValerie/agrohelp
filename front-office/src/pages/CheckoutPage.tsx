@@ -35,7 +35,7 @@ const CheckoutPage: React.FC = () => {
   });
   
   const [shippingDetails, setShippingDetails] = useState<ShippingDetails>();
-  const [inputCityValue, setInputCityValue] = useState('');
+  const [inputCityValue, setInputCityValue] = useState('Antananarivo');
   const [suggestionsCity, setSuggestionsCity] = useState<string[]>([]);
 
   const shipping = cartItems.length > 0 ? 5000 : 0;
@@ -53,7 +53,6 @@ const CheckoutPage: React.FC = () => {
     return null; // Prevent render while redirecting
   }
 
-  
   const onSubmitShipping = (data: ShippingDetails) => {
     // Move to payment step
     setShippingDetails(prev => ({
@@ -65,7 +64,6 @@ const CheckoutPage: React.FC = () => {
       setStep(2);
 
   };
-  
   
   const handlePayment = async (data: ShippingDetails) => {
     setIsSubmitting(true);
@@ -204,6 +202,7 @@ const CheckoutPage: React.FC = () => {
                       className={`w-full p-2 border rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                         errors.fullName ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'
                       }`}
+                      value={"Tojonirina Tsilavina"}
                     />
                     {errors.fullName && (
                       <p className="mt-1 text-sm text-red-600">{t('errors.required')}</p>
@@ -221,6 +220,7 @@ const CheckoutPage: React.FC = () => {
                       className={`w-full p-2 border rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                         errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'
                       }`}
+                      value={"tsilavinatojo01@gmail.com"}
                     />
                     {errors.email && (
                       <p className="mt-1 text-sm text-red-600">
@@ -243,6 +243,7 @@ const CheckoutPage: React.FC = () => {
                     className={`w-full p-2 border rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                       errors.phoneNumber ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'
                     }`}
+                    value={"0336403984"}
                   />
                   {errors.phoneNumber && (
                     <p className="mt-1 text-sm text-red-600">
@@ -263,6 +264,7 @@ const CheckoutPage: React.FC = () => {
                     className={`w-full p-2 border rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                       errors.address ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'
                     }`}
+                    value={"Itaosy"}
                   />
                   {errors.address && (
                     <p className="mt-1 text-sm text-red-600">{t('errors.required')}</p>
@@ -319,6 +321,7 @@ const CheckoutPage: React.FC = () => {
                       className={`w-full p-2 border rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text- white focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                         errors.postalCode ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'
                       }`}
+                      value={"101"}
                     />
                     {errors.postalCode && (
                       <p className="mt-1 text-sm text-red-600">
@@ -396,6 +399,7 @@ const CheckoutPage: React.FC = () => {
                       placeholder="034 35 000 03"
                       {...register('phoneNumberPay', { required: true, pattern: /^(?:\+261(32|33|34|38)|0(32|33|34|38))\d{7}$/ })}
                       className={`w-full p-2 border ${errors.phoneNumberPay ? 'border-red-500' : 'border-gray-300 dark:border-gray-700' } rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500`}
+                      value={"0341201212"}
                     />
                     {errors.phoneNumber && (
                       <p className="mt-1 text-sm text-red-600">

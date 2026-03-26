@@ -71,12 +71,6 @@ import { AuthService } from '../../services/auth.service';
               <span *ngIf="!isLoading">Sign In</span>
             </button>
           </form>
-          
-          <div class="login-footer">
-            <p class="demo-credentials">
-              &copy; <strong>Miandrs 2025.</strong>
-            </p>
-          </div>
         </mat-card>
       </div>
     </div>

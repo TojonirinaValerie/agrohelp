@@ -113,6 +113,7 @@ export const createOrder: RequestHandler = async (req: Request, res: Response, n
                 await revenue.save();
             }
             
+            console.log("success-**-----------------------")
             res.handler.dataCreated("Order created with success", { order: ordDetails });
         } else {
             res.handler.badRequest("City or Country not found");
